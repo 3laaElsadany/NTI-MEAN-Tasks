@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task NTI , Day 1</title>
+  </head>
+  <body>
+    <h1 id="mainTitle">Title</h1>
+
+    <p id="result"></p>
+    <p id="result1"></p>
+
+    <input id="username" />
+    <p id="result2"></p>
+    <button onclick="saveUsername()">Save</button>
+    
+    <p id="result3"></p>
+
+    <script>
+      // task 1
+      console.log("JS is running successfully");
+
+      // task 2
+      alert("Ready to practice!");
+
+      // task 3
+      var productName = "Laptop";
+      var price = 15000;
+      var isAvailable = true;
+
+      console.log(productName);
+      console.log(typeof productName);
+      console.log(price);
+      console.log(typeof price);
+      console.log(isAvailable);
+      console.log(typeof isAvailable);
+
+      // task 4
+      document.getElementById("mainTitle").innerText = "Practice Time";
+
+      // task 5
+      var city = "Cairo";
+      var country = "Egypt";
+      console.log(city + ", " + country);
+
+      // task 6
+      console.log(`Location: ${city} - ${country}`);
+
+      // task 7
+      var itemPrice = 120;
+      var quantity = 3;
+      console.log(itemPrice * quantity); //الاجمالى
+      console.log(400 - itemPrice * quantity); //الفرق لو دفعت 400
+      console.log(itemPrice * quantity); // الضرب
+      console.log(itemPrice / quantity); // القسمه
+      console.log(itemPrice % quantity); // باقى القسمه
+      console.log(quantity ** 2); // الاس
+
+      // task 8
+      var color = prompt("Enter your favorite color");
+      console.log(`Your favorite color is: ${color}`);
+
+      // task 9
+      var score = 20;
+      var textScore = "20";
+      console.log(score == textScore);
+      console.log(score === textScore);
+
+      // task 10
+      var quantity = prompt("Enter quantity");
+      var n1 = Number(quantity);
+      var n2 = parseInt(quantity);
+      var n3 = +quantity;
+      console.log(n1);
+      console.log(typeof n1);
+      console.log(n2);
+      console.log(typeof n2);
+      console.log(n3);
+      console.log(typeof n3);
+
+      // task 11
+      let fruits = ["apple", "banana", "mango"];
+      console.log(fruits[1]);
+      fruits[1] = "orange";
+      fruits.push("grape");
+      console.log(fruits);
+
+      // task 12
+      var course = {
+        title: "JavaScript",
+        hours: 120,
+        level: "Beginner",
+      };
+      course.title = "JavaScript Basics";
+      console.log(course.hours);
+      console.log(course);
+
+      // task 13
+      var hasAccount = true;
+      var isVerified = false;
+      console.log(hasAccount && isVerified);
+      console.log(hasAccount || isVerified);
+      console.log(!isVerified);
+
+      // task 14
+      var balance = 50;
+      balance += 30;
+      balance *= 2;
+      balance -= 20;
+      console.log(balance);
+
+      // task 15
+      var hotel = prompt("Hotel Name");
+      var nights = prompt("Number of nights");
+      var confirmed = confirm("Is booking confirmed?");
+      var message = `Hotel: ${hotel}, Nights: ${nights}, Confirmed: ${confirmed}`;
+      alert(message);
+      console.log(message);
+
+      // task 16
+      console.log(2 + 8 + "0"); //100
+      console.log("2" + 8 + 0); //280
+      console.log(2 + "8" + 0); //280
+
+      // task 17
+      // A
+      var city1 = "Alex";
+      var city2 = city1;
+      city2 = "Giza";
+      console.log(city1, city2); // Alex Giza    === > Because city2 is a copy of city1 and changing city2 does not affect city1
+      // B
+      var car1 = {
+        brand: "Toyota",
+      };
+      var car2 = car1;
+      car2.brand = "Honda";
+      console.log(car1, car2);
+
+      // C
+      var car1 = {
+        brand: "Toyota",
+      };
+      var car2 = Object.assign({}, car1);
+      car2.brand = "Honda";
+      console.log(car1, car2);
+
+      // task 18
+      var mixedBag = [
+        "Alaa",
+        21,
+        true,
+        null,
+        undefined,
+        { name: "Ali" },
+        [1, 2, 3],
+      ];
+
+      console.log(typeof mixedBag[0]);
+      console.log(typeof mixedBag[1]);
+      console.log(typeof mixedBag[2]);
+      console.log(typeof mixedBag[3]); // null is an object Because of a bug in JavaScript
+      console.log(typeof mixedBag[4]);
+      console.log(typeof mixedBag[5]);
+      console.log(typeof mixedBag[6]);
+
+      // task 19
+      var customer = prompt("Customer Name");
+
+      var orderPrice = Number(prompt("Order Price"));
+
+      var paid = confirm("Paid?");
+
+      var result = `Customer: ${customer}, Price: ${orderPrice}, Paid: ${paid}`;
+      alert(result);
+      console.log(result);
+      document.getElementById("result").innerText = result;
+
+      // task 20
+      var num1 = Number(prompt("First Number"));
+      var num2 = Number(prompt("Second Number"));
+      console.log(`${num1} + ${num2} = ${num1 + num2}`);
+      console.log(`${num1} - ${num2} = ${num1 - num2}`);
+      console.log(`${num1} * ${num2} = ${num1 * num2}`);
+      console.log(`${num1} / ${num2} = ${num1 / num2}`);
+      console.log(`${num1} % ${num2} = ${num1 % num2}`);
+      console.log(`${num1} ** ${num2} = ${num1 ** num2}`);
+
+      // task 21
+      var a = 40;
+      var b = 50;
+      var c = "60";
+      var d = 30;
+      var e = 30;
+      console.log(a + b + c + d + e); // 90603030  ==> Because of the string concatenation
+      console.log(a + b + Number(c) + d + e);
+
+      // task 22
+      function makeInvoiceLine(item, qty, paid) {
+        return `Invoice => Item: ${item} | Qty: ${qty} | Paid: ${paid}`;
+      }
+      var item = prompt("Item");
+      var qty = Number(prompt("Quantity"));
+      var paid = confirm("Paid?");
+      var invoice = makeInvoiceLine(item, qty, paid);
+      document.getElementById("result1").innerText = invoice;
+
+      // task 23
+      function saveUsername() {
+        let username = document.getElementById("username").value;
+
+        if (username == "") {
+          document.getElementById("result2").innerText = "Username is required";
+        } else {
+          document.getElementById("result2").innerText =
+            `Saved successfully: ${username}`;
+
+          console.log({
+            username: username,
+            status: "saved",
+          });
+        }
+      }
+
+      // task 24
+      var a = "15"; 
+      var b = 15;
+      var c = null;
+      var d;
+      var e = [15];
+      var f = { value: 15 };
+
+      console.log("a:", a, "| typeof:", typeof a, "| == 15:", a == 15, "| === 15:", a === 15);
+      console.log("b:", b, "| typeof:", typeof b, "| == 15:", b == 15, "| === 15:", b === 15);
+      console.log("c:", c, "| typeof:", typeof c, "| == 15:", c == 15, "| === 15:", c === 15);
+      console.log("d:", d, "| typeof:", typeof d, "| == 15:", d == 15, "| === 15:", d === 15);
+      console.log("e:", e, "| typeof:", typeof e, "| == 15:", e == 15, "| === 15:", e === 15);
+      console.log("f:", f, "| typeof:", typeof f, "| == 15:", f == 15, "| === 15:", f === 15);
+     
+      // task 25
+      var productName = prompt("Product Name");
+      var price = Number(prompt("Price"));
+      var category = prompt("Category");
+      var inStock = confirm("Is this product in stock?");
+      var brand = prompt("Brand");
+      var productInfo = {
+        productName,
+        brand,
+        price,
+        category,
+        inStock
+    };
+      var message = `Product ==> Card Name: ${productName}, Brand: ${brand}, Price: ${price}, Category: ${category}, In Stock: ${inStock}`;
+        alert(message);
+        console.log(productInfo);
+        document.getElementById("result3").innerText = message;
+        // Bonus
+        console.log(productName[0]);
+   </script>
+  </body>
+</html>
