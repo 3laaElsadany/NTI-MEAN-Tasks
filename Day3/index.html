@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task NTI , Day 3</title>
+  </head>
+  <body>
+    <script>
+      // task 1
+      var name = prompt("Enter your full name:");
+
+      name = name.trim().toLowerCase();
+
+      var result = "";
+
+      for (let i = 0; i < name.length; i++) {
+        if (i == 0 || name[i - 1] == " ") {
+          result += name[i].toUpperCase();
+        } else {
+          result += name[i];
+        }
+      }
+
+      var count = result.replaceAll(" ", "").length;
+
+      alert("Name: " + result + "\nCharacters: " + count);
+
+      // task 2
+      var email = prompt("Enter your email:");
+
+      if (
+        email.includes("@") &&
+        email.endsWith(".com") &&
+        !email.startsWith("@") &&
+        !email.includes(" ")
+      ) {
+        console.log("Valid Email");
+      } else {
+        console.log("Invalid Email");
+      }
+
+      // task 3
+      var text = prompt("Enter a text:");
+      var ch = prompt("Enter a character:");
+
+      text = text.toLowerCase();
+      ch = ch.toLowerCase();
+
+      var count = 0;
+
+      for (let i = 0; i < text.length; i++) {
+        if (text[i] == ch) {
+          count++;
+        }
+      }
+
+      console.log("Character appears " + `${count}` + " times.");
+
+      // task 4
+      var sentence = prompt("Enter a sentence:");
+      var word = prompt("Enter the word to replace:");
+      sentence = sentence.replaceAll(word, "***");
+      alert(sentence);
+
+      // task 5
+      var firstName = prompt("Enter First Name:");
+      var lastName = prompt("Enter Last Name:");
+
+      firstName = firstName.trim().toLowerCase();
+      lastName = lastName.trim().toLowerCase();
+
+      var username = firstName + "." + lastName;
+
+      username = username.replaceAll(" ", "");
+
+      if (username.length > 15) {
+        username = username.substring(0, 15);
+      }
+
+      alert("Username: " + username);
+
+      // task 6
+      var sentence = prompt("Enter a sentence:");
+      var word = prompt("Enter a word:");
+
+      var arr = sentence.split(" ");
+
+      var count = 0;
+      var first = -1;
+      var last = -1;
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == word) {
+          count++;
+
+          if (first == -1) {
+            first = i;
+          }
+
+          last = i;
+        }
+      }
+
+      if (count > 0) {
+        alert(
+          "First Position: " +
+            first +
+            "\nLast Position: " +
+            last +
+            "\nOccurrences: " +
+            count,
+        );
+      } else {
+        alert("Word does not exist.");
+      }
+
+      // task 7
+      var sentence = prompt("Enter a sentence:");
+
+      var words = sentence.split(" ");
+
+      var result = "";
+
+      for (let i = 0; i < words.length; i++) {
+        var reverse = "";
+
+        for (let j = words[i].length - 1; j >= 0; j--) {
+          reverse += words[i][j];
+        }
+
+        result += reverse + " ";
+      }
+
+      alert(result);
+
+      // task 8
+      var text = prompt("Enter a text:");
+
+      var words = text.split(" ");
+
+      var characters = text.replaceAll(" ", "").length;
+
+      var vowels = 0;
+      var digits = 0;
+      var upper = 0;
+      var lower = 0;
+
+      var longest = words[0];
+      var shortest = words[0];
+
+      for (let i = 0; i < text.length; i++) {
+        if ("aeiouAEIOU".includes(text[i])) {
+          vowels++;
+        }
+
+        if (text[i] >= "0" && text[i] <= "9") {
+          digits++;
+        }
+
+        if (text[i] >= "A" && text[i] <= "Z") {
+          upper++;
+        }
+
+        if (text[i] >= "a" && text[i] <= "z") {
+          lower++;
+        }
+      }
+
+      for (let i = 1; i < words.length; i++) {
+        if (words[i].length > longest.length) {
+          longest = words[i];
+        }
+
+        if (words[i].length < shortest.length) {
+          shortest = words[i];
+        }
+      }
+
+      alert(
+        "Words: " +
+          words.length +
+          "\nCharacters: " +
+          characters +
+          "\nVowels: " +
+          vowels +
+          "\nDigits: " +
+          digits +
+          "\nUppercase: " +
+          upper +
+          "\nLowercase: " +
+          lower +
+          "\nLongest Word: " +
+          longest +
+          "\nShortest Word: " +
+          shortest,
+      );
+
+      // task 9
+      var phone = prompt("Enter phone number:");
+      var result = "";
+      for (let i = 0; i < phone.length; i++) {
+        if (i < 4 || i >= phone.length - 3) {
+          result += phone[i];
+        } else {
+          result += "*";
+        }
+      }
+
+      alert(result);
+
+      // task 10
+      var sentence = prompt("Enter a sentence:");
+      sentence = sentence.trim();
+      sentence = sentence.split(" ");
+      sentence = sentence.filter((word) => word != "");
+      sentence = sentence.join(" ");
+      sentence = sentence.replaceAll("javascript", "JavaScript");
+      sentence = sentence[0].toUpperCase() + sentence.substring(1);
+      if (!sentence.endsWith(".")) {
+        sentence += ".";
+      }
+      alert(sentence);
+
+      // Bonus Task
+      var text = prompt("Enter text");
+      var choice;
+
+      while (choice != 8) {
+        choice = prompt(
+          "1- Upper\n2- Lower\n3- Characters\n4- Words\n5- Search\n6- Replace\n7- Reverse\n8- Exit",
+        );
+
+        switch (choice) {
+          case "1":
+            alert(text.toUpperCase());
+            break;
+
+          case "2":
+            alert(text.toLowerCase());
+            break;
+
+          case "3":
+            alert(text.length);
+            break;
+
+          case "4":
+            alert(text.split(" ").length);
+            break;
+
+          case "5":
+            var word = prompt("Word");
+            alert(text.includes(word) ? "Found" : "Not Found");
+            break;
+
+          case "6":
+            var oldWord = prompt("Old Word");
+            var newWord = prompt("New Word");
+            text = text.replaceAll(oldWord, newWord);
+            alert(text);
+            break;
+
+          case "7":
+            var reverse = "";
+            for (let i = text.length - 1; i >= 0; i--) {
+              reverse += text[i];
+            }
+            alert(reverse);
+            break;
+
+          case "8":
+            alert("Good Bye");
+            break;
+
+          default:
+            alert("Invalid Choice");
+        }
+      }
+    </script>
+  </body>
+</html>
