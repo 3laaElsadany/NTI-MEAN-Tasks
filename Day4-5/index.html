@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task NTI , Day 4 - 5</title>
+  </head>
+  <body>
+    <script>
+      // -------------------------
+      // file 1
+      // -------------------------
+
+      // 1. Create an empty array
+      var items = [];
+
+      // 2. Create - Add a new item
+      function addItem(item) {
+        items.push(item);
+      }
+
+      // 3. Read - Display all items
+      function getItems() {
+        items.forEach(function (item, index) {
+          console.log(index, item);
+        });
+      }
+
+      // 4. Update - Modify an item by index
+      function updateItem(index, newItem) {
+        items[index] = newItem;
+      }
+
+      // 5. Delete - Remove an item by index
+      function deleteItem(index) {
+        items.splice(index, 1);
+      }
+
+      // Create
+      addItem("item 1");
+      addItem("item 2");
+      addItem("item 3");
+
+      // Read
+      console.log("Items after Create:");
+      getItems();
+
+      // Update
+      updateItem(1, "item 4");
+
+      console.log("Items after Update:");
+      getItems();
+
+      // Delete
+      deleteItem(0);
+
+      console.log("Items after Delete:");
+      getItems();
+
+      // -------------------------
+      // file 2
+      // -------------------------
+
+      // =========================
+      // Task 1
+      // Functions & Callback
+      // =========================
+
+      function multiply(num1, num2) {
+        return num1 * num2;
+      }
+
+      function calculate(num1, num2, operation) {
+        return operation(num1, num2);
+      }
+
+      function displayResult(result) {
+        console.log(result);
+      }
+
+      let result = calculate(5, 10, multiply);
+
+      displayResult(result);
+
+      // =========================
+      // Task 1
+      // setTimeout
+      // =========================
+
+      function greetUser() {
+        setTimeout(function () {
+          console.log("Hello, User!");
+        }, 3000);
+      }
+
+      greetUser();
+
+      // =========================
+      // Task 2
+      // setInterval
+      // Countdown
+      // =========================
+
+      function countdown() {
+        let count = 10;
+
+        let interval = setInterval(function () {
+          console.log(count);
+
+          count--;
+
+          if (count === 0) {
+            clearInterval(interval);
+            console.log("Time's up!");
+          }
+        }, 1000);
+      }
+
+      countdown();
+
+      // =========================
+      // Task 3
+      // Clear setInterval
+      // Stop after 5 seconds
+      // =========================
+
+      function countdownAfter5Seconds() {
+        let count = 10;
+
+        let interval = setInterval(function () {
+          console.log(count);
+
+          count--;
+        }, 1000);
+
+        setTimeout(function () {
+          clearInterval(interval);
+        }, 5000);
+      }
+
+      countdownAfter5Seconds();
+
+      // =========================
+      // Task 4
+      // Clear setTimeout
+      // =========================
+
+      let timeout = setTimeout(function () {
+        console.log("This will be cleared!");
+      }, 5000);
+
+      clearTimeout(timeout);
+    </script>
+  </body>
+</html>
