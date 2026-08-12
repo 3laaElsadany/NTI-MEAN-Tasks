@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+
+/* ================= FORM ================= */
+
+form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+form h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    color: red;
+}
+
+
+/* Checkbox */
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+
+/* Buttons */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#addButton {
+    background-color: green;
+    color: white;
+}
+
+#updateButton {
+    background-color: orange;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    flex: 1;
+}
+
+.search-container select {
+    width: 200px;
+}
+
+
+/* ================= TABLE ================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #222;
+    color: white;
+}
+
+
+/* Actions */
+
+.action-btn {
+    padding: 6px 10px;
+    margin: 2px;
+}
+
+.view {
+    background-color: #3498db;
+    color: white;
+}
+
+.edit {
+    background-color: orange;
+    color: white;
+}
+
+.delete {
+    background-color: red;
+    color: white;
+}
+
+
+/* Stock */
+
+.in-stock {
+    color: green;
+    font-weight: bold;
+}
+
+.out-stock {
+    color: red;
+    font-weight: bold;
+}

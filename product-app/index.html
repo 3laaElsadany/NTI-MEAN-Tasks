@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Products App</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- ================= FORM ================= -->
+
+      <form id="productForm">
+        <h1>Products Form</h1>
+
+        <!-- Product Name -->
+        <div class="form-group">
+          <label for="productName"> Product Name </label>
+
+          <input
+            type="text"
+            id="productName"
+            placeholder="Enter product name"
+          />
+
+          <small id="nameError"></small>
+        </div>
+
+        <!-- Product Description -->
+        <div class="form-group">
+          <label for="productDescription"> Description </label>
+
+          <textarea
+            id="productDescription"
+            placeholder="Enter product description"
+          ></textarea>
+
+          <small id="descriptionError"></small>
+        </div>
+
+        <!-- Product Color -->
+        <div class="form-group">
+          <label for="productColor"> Product Color </label>
+
+          <select id="productColor">
+            <option value="">Select Color</option>
+
+            <option value="Red">Red</option>
+
+            <option value="Green">Green</option>
+
+            <option value="Blue">Blue</option>
+
+            <option value="Black">Black</option>
+
+            <option value="White">White</option>
+          </select>
+        </div>
+
+        <!-- Stock -->
+        <div class="checkbox-group">
+          <input type="checkbox" id="outOfStock" />
+
+          <label for="outOfStock"> Out Of Stock </label>
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="buttons">
+          <button type="submit" id="addButton">Add</button>
+
+          <button type="button" id="updateButton" class="hidden">Update</button>
+        </div>
+      </form>
+
+      <!-- ================= SEARCH ================= -->
+
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by name, description or color..."
+        />
+
+        <select id="stockFilter">
+          <option value="all">All Products</option>
+
+          <option value="in">In Stock</option>
+
+          <option value="out">Out Of Stock</option>
+        </select>
+      </div>
+
+      <!-- ================= TABLE ================= -->
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+
+            <th>Description</th>
+
+            <th>Color</th>
+
+            <th>Stock</th>
+
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody id="productsTable">
+          <!-- Products will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
